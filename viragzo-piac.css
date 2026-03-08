@@ -1,0 +1,312 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('viragzo-piac-hatter.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
+.main-header {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    gap: 0;
+}
+
+.nav-link {
+    flex: 1;
+    text-align: center;
+    padding: 15px 20px;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: 'Archivo Black', sans-serif;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-image: url('viragzo-piac-hatter.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    transform: scale(1.15);
+}
+
+
+
+.container {
+    width: 60%;
+    height: 60vh;
+    background: linear-gradient(135deg, #ffffff 0%, #c1c3c5 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fooldal,
+#terveink,
+#szavazas,
+#kapcsolat {
+    scroll-margin-top: 24px;
+}
+
+.section-card {
+    width: 60%;
+    min-height: 52vh;
+    background: linear-gradient(135deg, #ffffff 0%, #c1c3c5 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 28px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.section-small {
+    min-height: 32vh;
+}
+
+.section-title {
+    margin: 0;
+    font-family: 'Bungee', sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.section-placeholder {
+    flex: 1;
+    border: 2px dashed rgba(0, 0, 0, 0.35);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Archivo Black', sans-serif;
+    color: rgba(0, 0, 0, 0.72);
+    text-align: center;
+    padding: 16px;
+}
+
+.ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.vote-card {
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    padding: 12px;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(255, 255, 255, 0.55);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vote-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 0, 0, 0.45);
+}
+
+.vote-card.selected {
+    border-color: #111;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.idea-thumb {
+    height: 120px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.75);
+    font-family: 'Bungee', sans-serif;
+    font-size: 2.1rem;
+}
+
+.checkmark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #222;
+    color: #fff;
+    background: #222;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.vote-card.selected .checkmark {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.vote-total {
+    margin: 10px 0 0;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.95rem;
+}
+
+.vote-button {
+    align-self: center;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.vote-button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+.vote-error {
+    color: #d32f2f;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 12px 0 0 0;
+    min-height: 20px;
+}
+
+.vote-card.voted {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.vote-card.voted:hover {
+    transform: none;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1100px) {
+    .container,
+    .section-card {
+        width: 80%;
+    }
+
+    .title {
+        font-size: 7rem;
+    }
+
+    .ideas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .main-nav {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    .nav-link {
+        min-width: 45%;
+    }
+
+    .container,
+    .section-card {
+        width: 92%;
+    }
+
+    .title {
+        font-size: 4.2rem;
+        -webkit-text-stroke: 2px #7a7a7a;
+    }
+
+    .ideas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.title {
+    font-family: 'Bungee', sans-serif;
+    font-weight: 400;
+    font-size: 10rem;
+    background-image: url('viragzo-piac-hatter.jpg');
+    background-size: cover;
+    background-position: 80% 0%;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateZ(0);
+    margin: 0 20px 12px 20px;
+    text-align: center;
+    line-height: 1.2;
+    -webkit-text-stroke: 4px #7a7a7a;             
+    text-shadow: 8px -6px 14px rgba(0, 0, 0, 0.35); 
+}
+
+
+.subtitle {
+    width: calc(100% - 40px);   /* 20-20px oldalsó térköz */
+    margin: 0;
+    padding-top: 14px;
+    border-top: 3px solid #000; /* fekete elválasztóvonal */
+    border-width: 8px 0 0 0; /* csak a felső vonal legyen vastag */
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #222;
+    text-shadow: 3px -3px 6px rgba(0, 0, 0, 0.25);
+}
+.container{
+    font-family: 'Bungee', sans-serif;
+}

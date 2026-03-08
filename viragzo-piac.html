@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virágzó Piac</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Archivo+Black&display=block" rel="stylesheet">
+    <link rel="stylesheet" href="viragzo-piac.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="#fooldal" class="nav-link active">Főoldal</a>
+            <a href="#terveink" class="nav-link">Terveink</a>
+            <a href="#szavazas" class="nav-link">Szavazás</a>
+            <a href="#kapcsolat" class="nav-link">Kapcsolat</a>
+        </nav>
+    </header>
+
+    <section id="fooldal" class="container">
+        <h1 class="title">Virágzó<br>Piac</h1>
+        <h2 class="subtitle">ahol a sport, a tehetség és a közösség találkozik!</h2>
+    </section>
+
+    <section id="terveink" class="section-card">
+        <h3 class="section-title">Terveink</h3>
+        <div class="section-placeholder">Itt lesznek majd a terveink tartalmai.</div>
+    </section>
+
+    <section id="szavazas" class="section-card">
+        <h3 class="section-title">Szavazás</h3>
+        <div class="ideas-grid" id="ideasGrid">
+            <article class="vote-card" data-id="1">
+                <span class="checkmark">✓</span>
+                <div class="idea-thumb">A1</div>
+                <p class="vote-total">Szavazatok: <span class="vote-count">0</span></p>
+            </article>
+            <article class="vote-card" data-id="2">
+                <span class="checkmark">✓</span>
+                <div class="idea-thumb">A2</div>
+                <p class="vote-total">Szavazatok: <span class="vote-count">0</span></p>
+            </article>
+            <article class="vote-card" data-id="3">
+                <span class="checkmark">✓</span>
+                <div class="idea-thumb">A3</div>
+                <p class="vote-total">Szavazatok: <span class="vote-count">0</span></p>
+            </article>
+            <article class="vote-card" data-id="4">
+                <span class="checkmark">✓</span>
+                <div class="idea-thumb">A4</div>
+                <p class="vote-total">Szavazatok: <span class="vote-count">0</span></p>
+            </article>
+            <article class="vote-card" data-id="5">
+                <span class="checkmark">✓</span>
+                <div class="idea-thumb">A5</div>
+                <p class="vote-total">Szavazatok: <span class="vote-count">0</span></p>
+            </article>
+            <article class="vote-card" data-id="6">
+                <span class="checkmark">✓</span>
+                <div class="idea-thumb">A6</div>
+                <p class="vote-total">Szavazatok: <span class="vote-count">0</span></p>
+            </article>
+        </div>
+        <button id="voteButton" class="vote-button" type="button">Szavazás</button>
+        <p id="voteError" class="vote-error"></p>
+    </section>
+
+    <section id="kapcsolat" class="section-card section-small">
+        <h3 class="section-title">Kapcsolat</h3>
+        <div class="section-placeholder">Itt lesznek majd az elérhetőségek.</div>
+    </section>
+    
+    <script type="module" src="viragzo-piac.js"></script>
+</body>
+</html>
